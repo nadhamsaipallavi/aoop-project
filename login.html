@@ -42,62 +42,7 @@
         </form>
     </div>
     </body1>
-    <style>
-      /* General form styling */
-      .form-control {
-          position: relative;
-          margin-bottom: 20px;
-      }
-
-      .form-control input {
-          width: 100%;
-          padding: 10px;
-          font-size: 16px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-      }
-
-      .form-control.success input {
-          border-color: #2ecc71;
-      }
-
-      .form-control.error input {
-          border-color: #e74c3c;
-      }
-
-      /* Error message styling */
-      .form-control .error-message {
-          position: absolute;
-          bottom: -25px;
-          left: 0;
-          background-color: #e74c3c;
-          color: #fff;
-          padding: 5px;
-          border-radius: 4px;
-          font-size: 12px;
-          display: none;
-      }
-
-      .form-control.error .error-message {
-          display: block;
-      }
-  </style>
-  <form id="form">
-    <div class="form-control">
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter username">
-        <small class="error-message"></small>
-    </div>
-
-    <div class="form-control">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter password">
-        <small class="error-message"></small>
-    </div>
-
-    <button type="submit">Submit</button>
-</form>
-
+   
 <script>
     const form = document.getElementById('form');
     const username = document.getElementById('username');
@@ -110,7 +55,7 @@
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (validateInputs()) {
-            alert("Form successfully submitted!");
+            alert("login sucessful");
             window.location.href = 'index.html';
         }
     });
@@ -142,38 +87,38 @@
     }
 
     function validatePassword() {
-        const passwordValue = password.value.trim();
-        let isValid = true;
-        if (
-        passwordValue === '' ||
-        passwordValue.length !== 10 ||
-        !/(?=.*[A-Z])/.test(passwordValue) ||
-        !/(?=.*[a-z])/.test(passwordValue) ||
-        !/(?=.*\d)/.test(passwordValue) ||
-        !/(?=.*[!@#$%^&*])/.test(passwordValue)
-    ) {
-        // Now handle the exact error messages based on which condition failed
-        if (passwordValue === '') {
-            setErrorFor(password, 'Password cannot be blank');
-        } else if (passwordValue.length !== 10) {
-            setErrorFor(password, 'Password must be exactly 10 characters long');
-        } else if (!/(?=.*[A-Z])/.test(passwordValue)) {
-            setErrorFor(password, 'Password must contain one uppercase letter');
-        } else if (!/(?=.*[a-z])/.test(passwordValue)) {
-            setErrorFor(password, 'Password must contain one lowercase letter');
-        }
-        else if (!/(?=.*[!@#$%^&*])/.test(passwordValue)) {
-            setErrorFor(password, 'Password must contain one special character');
-        }
-
-        isValid = false;
-    } 
-         else {
-            setSuccessFor(password);
-        }
-
-        return isValid;
-    }
+          const passwordValue = password.value.trim();
+          let isValid = true;
+          if (
+          passwordValue === '' ||
+          passwordValue.length !== 10 ||
+          !/(?=.*[A-Z])/.test(passwordValue) ||
+          !/(?=.*[a-z])/.test(passwordValue) ||
+          !/(?=.*\d)/.test(passwordValue) ||
+          !/(?=.*[!@#$%^&*])/.test(passwordValue)
+      ) {
+          // Now handle the exact error messages based on which condition failed
+          if (passwordValue === '') {
+              setErrorFor(password, 'Password cannot be blank');
+          } else if (passwordValue.length !== 10) {
+              setErrorFor(password, 'Password must be exactly 10 characters long');
+          } else if (!/(?=.*[A-Z])/.test(passwordValue)) {
+              setErrorFor(password, 'Password must contain one uppercase letter');
+          } else if (!/(?=.*[a-z])/.test(passwordValue)) {
+              setErrorFor(password, 'Password must contain one lowercase letter');
+          }
+          else if (!/(?=.*[!@#$%^&*])/.test(passwordValue)) {
+              setErrorFor(password, 'Password must contain one special character');
+          }
+  
+          isValid = false;
+      } 
+           else {
+              setSuccessFor(password);
+          }
+  
+          return isValid;
+      }
 
     function setErrorFor(input, message) {
         const formControl = input.parentElement;
