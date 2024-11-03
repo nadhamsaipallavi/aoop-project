@@ -11,6 +11,12 @@ html,
 body {
   scroll-behavior: smooth;
 }
+body {
+  background: url('images/exp.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
 
 img {
   width: 100%;
@@ -20,6 +26,11 @@ img {
 a {
   text-decoration: none;
 }
+.explore_section {
+  background: url('images/exp.jpg') center center / cover no-repeat;
+  min-height: 100vh;
+}
+
 
 .header {
     background: url(images/home-img.jpg);
@@ -53,7 +64,7 @@ nav {
 
 .menu_btn {
   font-size: 1.5rem;
-  color: #fff;
+  color: #f0eded;
   cursor: pointer;
   display: none;
 }
@@ -154,6 +165,7 @@ nav {
   padding: 5rem 1rem;
 }
 
+
 .header_section {
   padding-block: 10rem 15rem;
 }
@@ -161,7 +173,7 @@ nav {
 .header_section p {
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: #fff;
+  color: #e0d7d7;
   text-align: center;
   opacity: 0.6;
 }
@@ -170,7 +182,7 @@ nav {
   font-size: 4rem;
   font-weight: 500;
   line-height: 4.5rem;
-  color: #fff;
+  color: #fff8f8;
   text-align: center;
 }
 
@@ -189,7 +201,7 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  background: #fff;
+  background: #ccc4c4;
   border-radius: 10px;
   transform: translateY(-50%);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
@@ -210,7 +222,7 @@ nav {
 
 .input_box label {
   font-weight: 500;
-  color: #0c0a09;
+  color: #090604;
 }
 
 .input_box input {
@@ -229,7 +241,7 @@ nav {
   margin-bottom: 0.5rem;
   font-weight: 500;
   letter-spacing: 2px;
-  color: #0c0a09;
+  color: #0d0806;
 }
 
 .title::after {
@@ -248,7 +260,7 @@ nav {
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 3rem;
-  color: #0c0a09;
+  color: #090808;
 }
 
 .desc {
@@ -351,6 +363,7 @@ nav {
     text-align: center;
     margin-inline: auto;
   }
+  
   
   .explore_wrapper {
     margin-top: 4rem;
