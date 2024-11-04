@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--Created by Tivotal-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Hotel Booking Website</title>
+
+    <!--font awesome(for icons)-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!--css file-->
+    <link rel="stylesheet" href="book.css" />
+   
+  </head>
+  <body>
+    <header class="header" id="home">
+      <nav>
+        <div class="navbar">
+          <div class="logo">
+            <a href="#">
+              <img src="images/logo.jpg" alt="" />
+            </a>
+          </div>
+
+          <div class="menu_btn">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="popular.html">Popular</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          
+        </ul>
+
+        <button class="btn nav_btn">Book Now</button>
+      </nav>      
+    </header>
+    <!-- g form -->
+    <section id="booking-details">
+      <h2>Book Your Stay at <span id="hotelName" ></span></h2>
+      <img class="hotelImage" id="hotelImage" alt="Hotel Image" />
+      <p>Location: <span id="hotelLocation"></span></p>
+      <p>Price per night: <span id="hotelPrice"></span></p>
+      
+      <!-- Booking form -->
+      <form action="confirmation.html" method="post">
+          <input type="hidden" name="hotelName" id="hiddenHotelName">
+          <input type="hidden" name="hotelPrice" id="hiddenHotelPrice">
+          <button type="submit">Confirm Booking</button>
+      </form>
+  </section>
+
+  <script>
+      // Function to extract URL parameters
+      function getQueryParams() {
+          const params = new URLSearchParams(window.location.search);
+          return {
+              image: params.get("image"),
+              name: params.get("name"),
+              location: params.get("location"),
+              price: params.get("price")
+          };
+      }
+
+      // Display hotel details
+      window.onload = function() {
+          const { image, name, location, price } = getQueryParams();
+
+          document.getElementById("hotelImage").src = image;
+          document.getElementById("hotelName").innerText = name;
+          document.getElementById("hotelLocation").innerText = location || "N/A";
+          document.getElementById("hotelPrice").innerText = price;
+
+          // Pass details to the booking form as hidden inputs
+          document.getElementById("hiddenHotelName").value = name;
+          document.getElementById("hiddenHotelPrice").value = price;
+      };
+  </script>
+    
+    
+
+
+</body>
+</html>

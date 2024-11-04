@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--Created by Tivotal-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Hotel Booking Website</title>
+
+    <!--font awesome(for icons)-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!--css file-->
+    <link rel="stylesheet" href="login.css" />
+   
+  </head>
+  <body>
+    <body1>
+        <div class="container">
+            <div class="head">
+                <h2>Login</h2>
+            </div>
+            <form id="form" class="form">
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Username" id="username" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                <label for="username">Password </label>
+                <input type="password" placeholder="Password" id="password"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <button>Submit</a></button>
+            <a class="form__link" href="signup.html" id="linkLogin">Don't have an account? Create account</a>
+        </form>
+    </div>
+    </body1>
+   
+<script>
+    const form = document.getElementById('form');
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+
+    // Attach input event listeners to dynamically validate while typing
+    username.addEventListener('input', () => validateUsername());
+    password.addEventListener('input', () => validatePassword());
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (validateInputs()) {
+            alert("login sucessful");
+            window.location.href = 'index.html';
+        }
+    });
+
+    function validateInputs() {
+        const isUsernameValid = validateUsername();
+        const isPasswordValid = validatePassword();
+        return isUsernameValid && isPasswordValid;
+    }
+
+    function validateUsername() {
+        const usernameValue = username.value.trim();
+        let isValid = true;
+
+        if (usernameValue === '') {
+            setErrorFor(username, 'Username cannot be blank');
+            isValid = false;
+        } else if (!/^[a-zA-Z]+$/.test(usernameValue)) {
+            setErrorFor(username, 'Username must contain only letters');
+            isValid = false;
+        } else if (usernameValue.length !== 7) {
+            setErrorFor(username, 'Username must be exactly 7 characters long');
+            isValid = false;
+        } else {
+            setSuccessFor(username);
+        }
+
+        return isValid;
+    }
+
+    function validatePassword() {
+          const passwordValue = password.value.trim();
+          let isValid = true;
+          if (
+          passwordValue === '' ||
+          passwordValue.length !== 10 ||
+          !/(?=.*[A-Z])/.test(passwordValue) ||
+          !/(?=.*[a-z])/.test(passwordValue) ||
+          !/(?=.*\d)/.test(passwordValue) ||
+          !/(?=.*[!@#$%^&*])/.test(passwordValue)
+      ) {
+          // Now handle the exact error messages based on which condition failed
+          if (passwordValue === '') {
+              setErrorFor(password, 'Password cannot be blank');
+          } else if (passwordValue.length !== 10) {
+              setErrorFor(password, 'Password must be exactly 10 characters long');
+          } else if (!/(?=.*[A-Z])/.test(passwordValue)) {
+              setErrorFor(password, 'Password must contain one uppercase letter');
+          } else if (!/(?=.*[a-z])/.test(passwordValue)) {
+              setErrorFor(password, 'Password must contain one lowercase letter');
+          }
+          else if (!/(?=.*[!@#$%^&*])/.test(passwordValue)) {
+              setErrorFor(password, 'Password must contain one special character');
+          }
+  
+          isValid = false;
+      } 
+           else {
+              setSuccessFor(password);
+          }
+  
+          return isValid;
+      }
+
+    function setErrorFor(input, message) {
+        const formControl = input.parentElement;
+        const small = formControl.querySelector('small');
+        formControl.className = 'form-control error'; // Add error class
+        small.innerText = message; // Set error message text
+    }
+
+    function setSuccessFor(input) {
+        const formControl = input.parentElement;
+        formControl.className = 'form-control success'; // Add success class
+    }
+</script>
+</body>
+</html>
