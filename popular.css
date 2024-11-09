@@ -233,7 +233,7 @@ nav {
     margin-bottom: 0.5rem;
     font-weight: 500;
     letter-spacing: 2px;
-    color: #f5f1f0;
+    color:black;
   }
   
   .title::after {
@@ -261,51 +261,42 @@ nav {
     color: #78716c;
   }
   
-  .deal_wrapper {
+  .deal_wrapper { 
+    display: flex; 
+    justify-content: space-between; 
+    gap: 2rem; /* Increase the gap between cards */ 
+    flex-wrap: wrap; 
     margin-top: 4rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
   }
   
-  @media (max-width: 1024px) {
-    .deal_wrapper {
-      gap: 1rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .deal_wrapper {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .deal_wrapper {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
-  
-  .deal_card {
+   .deal_card {
+    flex: 1 1 calc(30% - 2rem);
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(236, 227, 227, 0.934);
+    background: white;
+    margin-bottom: 2rem;
+   
+    
   }
   
   .card_img {
     position: relative;
     isolation: isolate;
+    height: 200px; /* Adjust height as needed */
+  }
+  
+  .card_img img {
+    height: 100%;
+    object-fit: cover;
   }
   
   .card_icons {
     position: absolute;
     right: 1rem;
     bottom: 1rem;
-    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
     gap: 1rem;
     z-index: 1;
   }
@@ -328,31 +319,29 @@ nav {
     padding: 1rem;
   }
   
-  .card_details h4 {
+  .card_details h4, .card_details p, .card_details h5 {
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #f2eeecf1;
-  }
-  
-  .card_details p {
-    margin-bottom: 0.5rem;
-    color: #fcf7f3;
-  }
-  
-  .card_details h5 {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #fbf3ee;
+    color: black;
   }
   
   .card_details h5 span {
     font-size: 1.1rem;
-    color: #f6f3f2;
   }
+  
+  @media (max-width: 1024px) { 
+    .deal_wrapper { 
+      flex-direction: column; 
+      align-items: center;
+     }
+  
+    .deal_card {
+      flex: 1 1 100%;
+      margin-bottom: 2rem;
+    }
+  
+  
   .popular {
-    background: url(images/popular2.jpg);
+   
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

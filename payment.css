@@ -221,74 +221,94 @@ nav {
   border-radius: 5px;
 }
 
-/* Styling for Book Page */
-#booking-details {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-#booking-details h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-#booking-details p {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 0.5rem;
-}
-
-#hotelImage {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-}
-
-#hotelName {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #444;
-}
-
-#hotelLocation,
-#hotelPrice {
-  font-size: 1.2rem;
-  color: #555;
-}
-
-form {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-form button[type="submit"] {
-  background-color: #ff4500;
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-form button[type="submit"]:hover {
-  background-color: #cd3801;
-}
-/* .hotelImage{
-  width: 200px;
-  height: auto;
-  border-radius: 5px;
-
-}  */
+  
+  body1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f4f4f4;
+  }
+  
+  .container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px; /* Increased width for layout */
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .payment-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem; /* Space between form and bill */
+  }
+  
+  form {
+    flex: 1;
+    min-width: 300px; /* Ensure form has a minimum width */
+  }
+  
+  .form-control {
+    margin-bottom: 1rem;
+  }
+  
+  .form-control label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .form-control input,
+  .form-control select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="date"] {
+    cursor: pointer;
+  }
+  
+  .btn1 {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: #ff4500;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn1:hover {
+    background: #ff4500;
+  }
+  
+  .bill {
+    flex: 1;
+    min-width: 300px; /* Ensure bill has a minimum width */
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bill h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .bill p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  

@@ -10,7 +10,9 @@
 html,
 body {
   scroll-behavior: smooth;
+
 }
+
 body1 {
 	
 	font-family: 'Open Sans', sans-serif;
@@ -212,8 +214,8 @@ body1 {
 }
 
 .form button {
-	background-color: #8e44ad;
-	border: 2px solid #8e44ad;
+	background-color: #ff4500;
+	border: 2px solid #ff4500;
 	border-radius: 4px;
 	color: #fff;
 	display: block;

@@ -43,8 +43,41 @@
       </nav>
       
     </header>
-    
-
-
 </body>
+<body1>
+    <div class="container">
+        <h2>Hotel Booking Registration</h2>
+        <form id="bookingForm">
+            <div class="form-control">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-control">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-control">
+                <label for="checkin">Check-in Date</label>
+                <input type="date" id="checkin" name="checkin" required>
+            </div>
+            <div class="form-control">
+                <label for="checkout">Check-out Date</label>
+                <input type="date" id="checkout" name="checkout" required>
+            </div>
+            <div class="form-control">
+                <label for="roomtype">Room Type</label>
+                <select id="roomtype" name="roomtype" required>
+                    <option value="single">Single</option>
+                    <option value="double">Double</option>
+                    <option value="suite">Suite</option>
+                </select>
+            </div>
+            <button type="submit" class="btn1">Book Now</button>
+        </form>
+    </div>
+</body1>
 </html>

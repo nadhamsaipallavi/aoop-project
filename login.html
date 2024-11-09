@@ -52,14 +52,7 @@
     username.addEventListener('input', () => validateUsername());
     password.addEventListener('input', () => validatePassword());
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (validateInputs()) {
-            alert("login sucessful");
-            window.location.href = 'index.html';
-        }
-    });
-
+   
     function validateInputs() {
         const isUsernameValid = validateUsername();
         const isPasswordValid = validatePassword();

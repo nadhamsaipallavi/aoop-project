@@ -12,7 +12,7 @@ body {
   scroll-behavior: smooth;
 }
 body {
-  background: url('images/exp.jpg') no-repeat center center;
+ 
   background-size: cover;
   min-height: 100vh;
 }
@@ -27,7 +27,7 @@ a {
   text-decoration: none;
 }
 .explore_section {
-  background: url('images/exp.jpg') center center / cover no-repeat;
+  
   min-height: 100vh;
 }
 
